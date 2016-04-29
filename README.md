@@ -28,6 +28,8 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     applications:
     - services:
       - dialog-service
+      - stt-service
+      - tts-service
       name: <application-name>
       command: node app.js
       path: .
@@ -41,10 +43,12 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     $ cf login -u <your-Bluemix-ID>
     ```
 
-  5. Create the Dialog service in Bluemix by running the following command:
+  5. Create the Dialog & Speech services in Bluemix by running the following commands:
 
     ```sh
     $ cf create-service dialog standard dialog-service
+    $ cf create-service speech_to_text standard stt-service
+    $ cf create-service text_to_speech standard tts-service
     ```
 
   6. Push it live by running the following command:
@@ -64,7 +68,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
 ## Running the application locally
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/), so you must download and install them as part of the following steps.
 
-  1. Copy the `username`, `password`, and `url` credentials from your `dialog-service` service in Bluemix to `app.js`. To see the credentials, run the following command, where `<application-name>` is the unique name you specified:
+  1. Copy the `username`, `password`, and `url` credentials from your Dialog and Speech services in Bluemix. To see the credentials, run the following command, where `<application-name>` is the unique name you specified:
     
     ```sh
     $ cf env <application-name>
@@ -88,6 +92,12 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     }
     }
     ```
+  
+    Copy these credentials into your code:
+    
+    * The Dialog credentials go into `app.js`.
+    * The Speech to Text credentials go into `stt-token.js`.
+    * The Text to Speech credentials go into `tts-token.js`.
   
   2. Install [Node.js](http://nodejs.org/).
   3. Go to the project folder in a terminal and run the `npm install` command.
