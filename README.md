@@ -101,10 +101,9 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     * The Speech to Text credentials go into `stt-token.js`.
     * The Text to Speech credentials go into `tts-token.js`.
   
-  2. Install [Node.js](http://nodejs.org/).
-  3. Go to the project folder in a terminal and run the `npm install` command.
-  4. Start the application by running `node app.js`.
-  5. Open `http://localhost:3000` to see the running application.
+  2. Go to the project folder in a terminal and run the `npm install` command.
+  3. Start the application by running `node app.js`.
+  4. Open `http://localhost:3000` to see the running application.
 
 ## Troubleshooting
 
