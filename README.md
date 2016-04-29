@@ -67,6 +67,8 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
 
 ## Running the application locally
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/), so you must download and install them as part of the following steps.
+  
+  You must also have a bluemix account and service instances created and bound to an application in order to obtain credentials. See steps 1-6 above, or click the "Deploy to Bluemix" button which automates that process.
 
   1. Copy the `username`, `password`, and `url` credentials from your Dialog and Speech services in Bluemix. To see the credentials, run the following command, where `<application-name>` is the unique name you specified:
     
