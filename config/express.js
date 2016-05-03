@@ -19,9 +19,16 @@
 // Module dependencies
 var express    = require('express'),
   errorhandler = require('errorhandler'),
+  secure     = require('express-secure-only'),
   bodyParser   = require('body-parser');
 
 module.exports = function (app) {
+
+  // If in production (port bluemix uses for production) route all traffic through https
+  if (process.env.VCAP_APP_PORT) {
+    app.enable('trust proxy');
+    app.use(secure());
+  }
 
   // Configure Express
   app.use(bodyParser.urlencoded({ extended: true }));
