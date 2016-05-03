@@ -16,8 +16,6 @@ var sttConfig = extend({
   password: '<password>'
 }, vcapServices.getCredentials('speech_to_text'));
 
-console.log(process.env.VCAP_SERVICES);
-
 var sttAuthService = watson.authorization(sttConfig);
 
 router.get('/token', function(req, res) {
